@@ -1,7 +1,8 @@
 import os
 import re
 
-def rename_files_in_directory(dir_name="downloaded-img"):
+# make sure to modify where it says "example-folder-name" to your own
+def rename_files_in_directory(dir_name="example-folder-name"):
     """
     Renames files in the specified directory by moving the file extension to the end.
     
@@ -20,7 +21,7 @@ def rename_files_in_directory(dir_name="downloaded-img"):
         # Use a regular expression to identify the file's structure.
         # The pattern we are looking for has four groups:
         # 1. The main part of the filename before the extension.
-        # 2. The dot and the image extension (like .jpg, .jpeg, .png, .webp).
+        # 2. The dot and the image extension (like .jpg, .jpeg, .png, .webp, .gif).
         # 3. The image extension without the dot.
         # 4. The '-from-' part and everything after it.
         match = re.match(r'^(.*?)(\.(jpg|jpeg|png|webp|gif))(-from-.*)$', filename, re.IGNORECASE)
